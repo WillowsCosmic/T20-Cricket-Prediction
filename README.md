@@ -104,7 +104,7 @@ Simply visit the live app: **[T20 Cricket Score Predictor](https://willowscosmic
 - **Model**: XGBoost Regressor
 - **Target**: Remaining runs in the innings
 - **Calculation**: `Final Score = Current Score + Predicted Remaining Runs`
-- **Deployment**: Model hosted on Google Drive, loaded on app startup
+- **Deployment**: Model hosted on Streamlit Cloud, loaded on app startup
 
 ### Features
 
@@ -126,11 +126,8 @@ Simply visit the live app: **[T20 Cricket Score Predictor](https://willowscosmic
 - **Hyperparameter Tuning** for optimal XGBoost performance
 
 ### Dataset
-- **Source**: Historical T20 international matches (2007-2024)
-- **Matches**: 600+
-- **Ball-by-ball data**: 72,000+ predictions
-- **Teams**: 10 international teams
-- **Venues**: 90+ stadiums worldwide
+- **Source**: T20i_info.csv
+
 
 ### Why XGBoost?
 
