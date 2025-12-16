@@ -3,7 +3,7 @@
 
 A machine learning-powered web application that predicts T20 cricket match scores in real-time using historical match data and current game statistics.
 
-🚀 **Live Demo**: [Try it now on Streamlit Cloud](https://your-app-url.streamlit.app)
+🚀 **Live Demo**: [Try it now on Streamlit Cloud](https://willowscosmic-t20-cricket-prediction-app-ognnfi.streamlit.app/)
 
 ## ✨ Features
 
