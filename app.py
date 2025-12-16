@@ -6,16 +6,12 @@ import os
 
 @st.cache_resource
 def load_model():
-    # Google Drive file ID
-    FILE_ID = "1ABC123XYZ456"  # Replace with your actual FILE_ID
-    
-    # Download URL
+    FILE_ID = "1C7sWk4kDYKYvTWe0A7f4quREGMFk3jyQ"  
+
     URL = f"https://drive.google.com/uc?export=download&id={FILE_ID}"
-    
-    # Local path to save the model
+ 
     MODEL_PATH = "pipe.pkl"
     
-    # Download if not exists locally
     if not os.path.exists(MODEL_PATH):
         with st.spinner("📥 Downloading model from Google Drive..."):
             response = requests.get(URL)
