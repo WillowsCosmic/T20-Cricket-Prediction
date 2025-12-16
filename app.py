@@ -1,10 +1,35 @@
 import streamlit as st
 import pickle
 import pandas as pd
+import requests
+import os
 
 @st.cache_resource
 def load_model():
-    return pickle.load(open('pipe.pkl', 'rb'))
+    # Google Drive file ID
+    FILE_ID = "1ABC123XYZ456"  # Replace with your actual FILE_ID
+    
+    # Download URL
+    URL = f"https://drive.google.com/uc?export=download&id={FILE_ID}"
+    
+    # Local path to save the model
+    MODEL_PATH = "pipe.pkl"
+    
+    # Download if not exists locally
+    if not os.path.exists(MODEL_PATH):
+        with st.spinner("📥 Downloading model from Google Drive..."):
+            response = requests.get(URL)
+            
+            if response.status_code == 200:
+                with open(MODEL_PATH, 'wb') as f:
+                    f.write(response.content)
+                st.success("✅ Model loaded successfully!")
+            else:
+                st.error("❌ Failed to download model. Check your Google Drive link!")
+                return None
+    
+    # Load the model
+    return pickle.load(open(MODEL_PATH, 'rb'))
 
 pipe = load_model()
 
